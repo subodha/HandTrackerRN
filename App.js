@@ -16,7 +16,7 @@ export default class App extends React.Component {
       isTfReady: false,
     };
 
-    const image = require('./assets/cat.png');
+    
   }
 
   // handleCameraStream(images, updatePreview, gl) {
@@ -49,8 +49,8 @@ export default class App extends React.Component {
     const model = await mobilenet.load();
 
     // Get a reference to the bundled asset and convert it to a tensor
-    
-    const imageAssetPath = Image.resolveAssetSource(require('./assets/cat.png'));
+    const image = require('./assets/cat.png');
+    const imageAssetPath = Image.resolveAssetSource(image);
     const response = await fetch(imageAssetPath.uri, {}, { isBinary: true });
     const imageData = await response.arrayBuffer();
 
